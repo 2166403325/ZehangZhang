@@ -6,8 +6,8 @@
 </template>
 
 <style lang="less">
-/* 引入初始化css */
-@import url('./assets/css/base.css');
+/* 引入初始化css 也可以在main文件直接引入 */
+// @import url('./assets/css/base.css');
 </style>
 
 
