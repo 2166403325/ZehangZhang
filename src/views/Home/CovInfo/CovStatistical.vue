@@ -4,31 +4,37 @@
             <div class="title">截至{{epidemicData.modifyTime | nowTime}}全国数据统计</div>
             <ul class="wrap">
                 <li>
-                    <span>较昨日 {{epidemicData.currentConfirmedIncr | yesNumer}}</span>
+                    <span>较昨日 </span>
+                    <span class="yesNumber">{{epidemicData.currentConfirmedIncr | yesNumer}}</span>
                     <div class="bold">{{epidemicData.currentConfirmedCount}}</div>
                     <strong>现存确诊</strong>
                 </li>
                 <li>
-                    <span>较昨日 {{epidemicData.suspectedCount | yesNumer}}</span>
+                    <span>较昨日 </span>
+                    <span class="yesNumber">{{epidemicData.suspectedCount | yesNumer}}</span>
                     <div class="bold">{{epidemicData.suspectedCount}}</div>
                     <strong>境外输入</strong>
                 </li>
                 <li>
-                    <span>较昨日 {{epidemicData.confirmedIncr | yesNumer}}</span>
+                    <span>较昨日 </span>
+                    <span class="yesNumber">{{epidemicData.confirmedIncr | yesNumer}}</span>
                     <div class="bold">{{epidemicData.seriousCount}}</div>
                     <strong>现存无症状</strong>
                 </li>
                 <li>
-                    <span>较昨日 {{epidemicData.confirmedIncr | yesNumer}}</span>
+                    <span>较昨日 </span>
+                    <span class="yesNumber">{{epidemicData.confirmedIncr | yesNumer}}</span>
                     <div class="bold">{{epidemicData.confirmedCount}}</div>
                     <strong>累计确诊</strong>
                 </li>
                 <li>
-                    <span>较昨日 {{epidemicData.deadIncr | yesNumer}}</span>
+                    <span>较昨日 </span>
+                    <span class="yesNumber">{{epidemicData.deadIncr | yesNumer}}</span>
                     <div class="bold">{{epidemicData.deadCount}}</div>
                     <strong>累计死亡</strong>
                 </li>                <li>
-                    <span>较昨日 {{epidemicData.curedIncr | yesNumer}}</span>
+                    <span>较昨日 </span>
+                    <span class="yesNumber">{{epidemicData.curedIncr | yesNumer}}</span>
                     <div class="bold">{{epidemicData.curedCount}}</div>
                     <strong>累计治愈</strong>
                 </li>                
@@ -51,7 +57,7 @@ export default {
     filters: {
         // 对疫情数据统计上升/下降数量的
         yesNumer: function(val) {
-            val= val > 0 ? '+' + val : val;
+            val= val > 0 ? '+' + val : val; 
             return val
         },
         nowTime: function(time) {
@@ -88,24 +94,25 @@ export default {
             margin-bottom: 0.2rem;
         }
         .bold {
+            font-size: 18px;
             font-weight: bold;
         }
-        li:nth-child(1) .bold {
+        li:nth-child(1) .bold,li:nth-child(1) .yesNumber {
             color: rgb(202, 30, 30);
         }
-        li:nth-child(2) .bold {
+        li:nth-child(2) .bold, li:nth-child(2) .yesNumber {
             color: rgb(41, 41, 224);
         }
-        li:nth-child(3) .bold {
+        li:nth-child(3) .bold, li:nth-child(3) .yesNumber {
             color: rgb(26, 108, 201);
         }
-        li:nth-child(4) .bold {
+        li:nth-child(4) .bold, li:nth-child(4) .yesNumber {
             color: rgb(172, 172, 43);
         }
-        li:nth-child(5) .bold {
+        li:nth-child(5) .bold, li:nth-child(5) .yesNumber {
             color: rgb(212, 39, 126);
         }
-        li:nth-child(6) .bold {
+        li:nth-child(6) .bold, li:nth-child(6) .yesNumber {
             color: rgb(22, 204, 119);
         }
     }

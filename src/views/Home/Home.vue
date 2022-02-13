@@ -12,8 +12,10 @@
         <!-- 3.疫情导航 -->
         <div class="list">
             <div>
-                <img src="../../assets/images/1.png" alt="">
-                <div>一元义诊</div>
+                <router-link to="/riskArea">
+                    <img src="../../assets/images/1.png" alt="">
+                    <div>风险地区</div>
+                </router-link>
             </div>
             <div>
                 <router-link to="/account">
@@ -101,7 +103,8 @@ export default {
                 modifyTime: data.modifyTime,
             };
             console.log('epidemicData =', this.epidemicData)
-        }
+        },
+
     },
 }
 </script>
