@@ -1,5 +1,6 @@
 import Vue from 'vue';
-import { Tab, Tabs } from 'vant';
+import { Tab, Tabs, NoticeBar } from 'vant';
 
 Vue.use(Tab);
 Vue.use(Tabs);
+Vue.use(NoticeBar);

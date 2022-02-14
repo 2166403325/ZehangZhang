@@ -1,16 +1,18 @@
 <template>
-    <div>
+    <div id="homepage">
         <!-- 疫情首页图 -->
         <div class="home">
             <img src="../../assets/images/1.jpg" width="100%"/>
         </div>
         <!-- 病毒信息 -->
-        <CovInfo
-            :covDesc="covDesc"
-            :covNews="covNews"
-        />
+        <div class="bgColor">
+            <CovInfo
+                :covDesc="covDesc"
+                :covNews="covNews"
+            />
+        </div>
         <!-- 3.疫情导航 -->
-        <div class="list">
+        <div class="list bgColor">
             <div>
                 <router-link to="/riskArea">
                     <img src="../../assets/images/1.png" alt="">
@@ -24,8 +26,11 @@
                 </router-link>
             </div>
             <div>
-                <img src="../../assets/images/3.png" alt="">
-                <div>防疫物资</div>
+                <router-link to="/prevention">
+                    <img src="../../assets/images/3.png" alt="">
+                    <div>防疫物资</div>
+                </router-link>
+
             </div>
             <div>
                 <img src="../../assets/images/4.png" alt="">
@@ -33,9 +38,11 @@
             </div>
         </div>
         <!-- 4.数据统计 -->
-        <CovStatistical
-            :epidemicData="epidemicData"
-        />
+        <div class="bgColor">
+            <CovStatistical
+                :epidemicData="epidemicData"
+            />
+        </div>
     </div>
 </template>
 
@@ -110,6 +117,9 @@ export default {
 </script>
 
 <style scoped lang="less">
+#homepage {
+    background: #f7f7f7;
+}
 .list {
     display: flex;
     padding-bottom: 0.2rem;
