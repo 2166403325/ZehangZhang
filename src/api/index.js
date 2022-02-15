@@ -14,6 +14,19 @@ const api ={
     getCovInfo(){
         return axios.get(base.host+base.covInfo)
     },
+    /**
+     * 获取国内疫情
+     */
+    getChinaData(){
+        return axios.get(base.baseUrl+base.chinaData);
+    },
+    /**
+     * 世界疫情
+     */
+    getWorldData(){
+        return axios.get(base.baseUrl+base.worldData)
+    }
+    
 }
 
 export default api

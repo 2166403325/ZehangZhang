@@ -43,6 +43,16 @@
                 :epidemicData="epidemicData"
             />
         </div>
+
+        <!-- 5.中国疫情形势 -->
+        <div class="bgColor">
+            <ChinaMap/>
+        </div>
+
+        <!-- 6.世界疫情形势 -->
+        <div class="bgColor">
+            <WorldMap/>
+        </div>
     </div>
 </template>
 
@@ -50,11 +60,15 @@
 import CovInfo from './CovInfo/CovINfo.vue'
 import CovStatistical from './CovInfo/CovStatistical.vue'
 import CovApi from '../../api/index'
+import ChinaMap from './CovEcharts/ChinaMap.vue'
+import WorldMap from './CovEcharts/WorldMap.vue';
 export default {
     name: 'Home',
     components: {
         CovInfo,
-        CovStatistical
+        CovStatistical,
+        ChinaMap,
+        WorldMap
     },
     data() {
         return {

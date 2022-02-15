@@ -7,6 +7,13 @@ import './assets/css/base.css'
 import './assets/js/phone'
 // 引入vant组件库
 import './plugins/vant'
+//引入echarts，并挂载原型上
+// import echarts from 'echarts'
+// Vue.prototype.$echarts = echarts;
+
+// 使用开发分插件
+import echarts from './plugins/echarts'
+Vue.use(echarts);
 Vue.config.productionTip = false
 
 new Vue({
