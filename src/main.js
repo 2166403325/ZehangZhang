@@ -14,6 +14,12 @@ import './plugins/vant'
 // 使用开发分插件
 import echarts from './plugins/echarts'
 Vue.use(echarts);
+
+// 引入swiper插件
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+Vue.use(VueAwesomeSwiper)
+
 Vue.config.productionTip = false
 
 new Vue({

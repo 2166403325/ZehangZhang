@@ -53,6 +53,9 @@
         <div class="bgColor">
             <WorldMap/>
         </div>
+
+        <!-- 7.轮播图 -->
+        <VueSwiper />
     </div>
 </template>
 
@@ -62,13 +65,15 @@ import CovStatistical from './CovInfo/CovStatistical.vue'
 import CovApi from '../../api/index'
 import ChinaMap from './CovEcharts/ChinaMap.vue'
 import WorldMap from './CovEcharts/WorldMap.vue';
+import VueSwiper from './VueSwiper/VueSwiper.vue'
 export default {
     name: 'Home',
     components: {
         CovInfo,
         CovStatistical,
         ChinaMap,
-        WorldMap
+        WorldMap,
+        VueSwiper
     },
     data() {
         return {
