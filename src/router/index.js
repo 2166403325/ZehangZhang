@@ -6,7 +6,7 @@ import Home from '../views/Home/Home.vue'
 const Account = () => import('../views/Account/index.vue')
 const RiskArea = () => import('../views/RiskArea/index.vue')
 const Prevention = () => import('../views/Prevention/index.vue')
-
+const Citys = () => import('../views/Citys/Citys.vue')
 Vue.use(VueRouter)
 
 const routes = [
@@ -29,6 +29,12 @@ const routes = [
         path: '/prevention',
         name: 'Prevention',
         component: Prevention
+    },
+    {
+        path: '/citys/:cityname',
+        name: 'Citys',
+        component: Citys,
+        props: true
     }
 ]
 

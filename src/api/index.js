@@ -25,6 +25,14 @@ const api ={
      */
     getWorldData(){
         return axios.get(base.baseUrl+base.worldData)
+    },
+    /**
+     * 城市接口
+     * 参数：format=json&appid=6938&city_name=城市名称&sign=md5加密字符串
+     */
+    getCity() {
+        // return axios.get(base.baseUrl + base.city + '?')
+        let canshu = 'format=json&appid=6938&city_name='+city_name+'&sign=md5加密字符串'
     }
     
 }

@@ -22,44 +22,46 @@ export default {
         return {
             active: 0,
             arr: [],
+            cumData: null,
+            nowData: null
         }
     },
     // echarts实例创建地图
     mounted() {
-        // 先获取疫情数据
-        CovApi.getChinaData().then((res) => {
-            console.log("ChinaMap Data =", res.data);
-            // 获取省份数据
-            let citys = res.data.retdata;
-            let arr = []; // 累计
-            let nowArr = []; // 现存
-            for(let i = 0; i < citys.length; i++) {
-                let obj = {};
-                obj.name = citys[i].xArea;
-                obj.value = citys[i].confirm;
-                let now = {};
-                now.name = citys[i].xArea;
-                now.value = citys[i].curConfirm;
-                arr.push(obj);
-                nowArr.push(now);
-            }
-            this.arr = arr;
-            console.log("城市数据", arr);
-
-            // 延迟加载
-            this.$nextTick(() => {
-                // 显示累计确诊地图
-                // this.$myChart.chinaMap("main", arr);
-                // 显示现存确诊地图
-                this.$myChart.chinaMap("nowMain", nowArr);
+            // 先获取疫情数据
+            CovApi.getChinaData().then((res) => {
+                console.log("ChinaMap Data =", res.data);
+                // 获取省份数据
+                let citys = res.data.retdata;
+                let arr = []; // 累计
+                let nowArr = []; // 现存
+                for(let i = 0; i < citys.length; i++) {
+                    let obj = {};
+                    obj.name = citys[i].xArea;
+                    obj.value = citys[i].confirm;
+                    let now = {};
+                    now.name = citys[i].xArea;
+                    now.value = citys[i].curConfirm;
+                    arr.push(obj);
+                    nowArr.push(now);
+                }
+                this.arr = arr;
+                console.log("城市数据", arr);
+                // 延迟加载
+                this.$nextTick(() => {
+                    // 显示现存确诊地图
+                    this.$myChart.chinaMap("nowMain", nowArr);
+                    localStorage.setItem("nowData", nowArr);
+                })
             })
-        })
+
     },
     methods: {
         change(title) { // title为 van-tabs 的index 0：现存确诊 1：累计确诊
             console.log("test ---", title)
             if (title == 1) {
                 this.$nextTick(() => {
+                    // 显示累计确诊地图
                     this.$myChart.chinaMap("main", this.arr)
                 });
             }

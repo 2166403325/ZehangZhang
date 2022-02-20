@@ -9,7 +9,7 @@
 export default {
     props: ['cityname'],
     mounted() {
-        this.$myChart.cityMap('main'.this.cityname,[])
+        this.$myChart.cityMap('main',this.cityname,[])
     },
 }
 </script>

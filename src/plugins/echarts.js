@@ -28,7 +28,7 @@ const install = function (Vue, options) {
         $myChart: {
             get() {
                 return {
-                    //1. 绘制一个折线图
+                    //1. 绘制一个折线图(测试echarts是否可用)
                     line(id) {
                         4
                         var myChart = echarts.init(document.getElementById(id));
@@ -64,11 +64,11 @@ const install = function (Vue, options) {
                                 triggerOn: 'click', //提示框触发的条件
                                 enterable: true,//鼠标是否可进入提示框浮层中，默认为false
                                 formatter(item) {//item=下面serves里面的data里面的每一项 //[{} ] data={} a b c d 
-                                    return '<a href="#/citys/'+item.name+'" style="color:#fff">省份：'+item.name+'--详情</a>'
+                                    return '<a href="#/citys/'+item.name+'" style="color:#fff">省份：'+item.name+' | 详情</a>'
                                 }
                             },
                             visualMap: [{ //映射高亮颜色
-                                orient: "horizontal", //水平的
+                                orient: "vertical", //水平的:horizontal 垂直：vertical
                                 type: "piecewise", //离散
                                 bottom: 0,
                                 textGap: 4,
@@ -77,7 +77,7 @@ const install = function (Vue, options) {
                                 itemHeight: 10,
                                 padding: 2,
                                 textStyle: {
-                                    fontSize: 9,
+                                    fontSize: 12,
                                 },
                                 pieces: [ // 配置颜色区间
                                     {
