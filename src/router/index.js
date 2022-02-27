@@ -3,10 +3,12 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home/Home.vue'
 
 //异步
-const Account = () => import('../views/Account/index.vue')
-const RiskArea = () => import('../views/RiskArea/index.vue')
-const Prevention = () => import('../views/Prevention/index.vue')
+const Account = () => import('../views/Account/Account.vue')
+const RiskArea = () => import('../views/RiskArea/RiskArea.vue')
+const Prevention = () => import('../views/Prevention/Prevention.vue')
 const Citys = () => import('../views/Citys/Citys.vue')
+const Travel = () => import('../views/Travel/Travel.vue')
+const SelectCity = () => import('../views/SelectCity/SelectCity.vue')
 Vue.use(VueRouter)
 
 const routes = [
@@ -35,6 +37,16 @@ const routes = [
         name: 'Citys',
         component: Citys,
         props: true
+    },
+    {
+        path: '/travel',
+        name: 'Travel',
+        component: Travel
+    },
+    {
+        path: '/selectCity',
+        name: 'SelectCity',
+        component: SelectCity
     }
 ]
 

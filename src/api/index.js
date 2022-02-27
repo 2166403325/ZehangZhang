@@ -63,9 +63,13 @@ const api ={
      * 城市出行政策
      */
     getTravelQuery(params) {
+        console.log("params =", params)
         return axios.get(base.travelQuery,{
             params
         })
+    },
+    chooseCity() {
+        return axios.get(base.chooseCity)
     }
 }
 

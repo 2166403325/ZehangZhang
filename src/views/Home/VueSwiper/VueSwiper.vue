@@ -13,7 +13,7 @@
                 @click="changeSwiper(index)"
                 :class="{active: index == num}"
             >
-                {{ item.title }}
+                {{item.title}}
             </li>
         </ul>
     </div>
@@ -59,6 +59,7 @@ export default {
         },
     },
     mounted() {
+        // TODO 取localStorage中的数据，有则用， 无再调用api请求，当页面关闭时，将localStorage中存入的数据清掉
         covApi.getSwiperBanner()
         .then(res => {
             console.log("--轮播图--",res.data);
@@ -90,8 +91,8 @@ export default {
         align-items: center;
     }
     .active {
-        background: rgb(80, 116, 173);
-        color: #fff
+        background: #f1f5ff;
+        color: #4169e2;
     }
 }
 </style>

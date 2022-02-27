@@ -1,8 +1,11 @@
 <template>
-    <div id="homepage">
+    <div id="home">
         <!-- 疫情首页图 -->
-        <div class="home">
+        <div class="logo">
             <img src="../../assets/images/1.jpg" width="100%"/>
+
+            <!-- 点击进入城市选择 -->
+            <router-link class="select" to="/selectCity">{{ city }}</router-link>
         </div>
         <!-- 病毒信息 -->
         <div class="bgColor">
@@ -33,8 +36,10 @@
 
             </div>
             <div>
-                <img src="../../assets/images/4.png" alt="">
-                <div>出行政策</div>
+                <router-link to="/travel">
+                    <img src="../../assets/images/4.png" alt="">
+                    <div>出行政策</div>
+                </router-link>
             </div>
         </div>
         <!-- 4.数据统计 -->
@@ -79,10 +84,18 @@ export default {
         return {
             covDesc: {},
             covNews: [],
-            epidemicData: {}
+            epidemicData: {},
+            city: '请选择所在地'
         }
     },
+    beforeDestroy() {
+        this.$bus.$off('city');
+    },
     created() {
+        this.$bus.$on('city', val => {
+            console.log("--val--", val);
+            this.city = val;
+        })
         // 请求病毒数据接口
         CovApi.getCovInfo()
         .then(res => {
@@ -136,8 +149,20 @@ export default {
 </script>
 
 <style scoped lang="less">
-#homepage {
+#home {
     background: #f7f7f7;
+}
+.logo {
+  position: relative;
+  .select {
+    position: absolute;
+    right: 0.2rem;
+    top: 0.3rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.2rem;
+  }
 }
 .list {
     display: flex;

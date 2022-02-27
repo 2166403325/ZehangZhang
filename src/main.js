@@ -20,6 +20,10 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 Vue.use(VueAwesomeSwiper)
 
+// 中央系统
+import Bus from './utils/event-bus'
+Vue.prototype.$bus = Bus;
+
 Vue.config.productionTip = false
 
 new Vue({

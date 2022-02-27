@@ -12,8 +12,9 @@ const base ={
     allData:'/api/94/222?format=json&appid=6938&sign=687569b1fd450f3491cd6e72f82aacf7',//全球接口
     swiperBanner:'http://iwenwiki.com/wapicovid19/ncovimg.php',//轮播图疫情
     // travel:'http://apis.juhe.cn/springTravel/citys?key=171e165a7d991c5f6ecd5194c54778ef',
-    travel:'/api/springTravel/citys?key=171e165a7d991c5f6ecd5194c54778ef',
-    travelQuery:'/api/springTravel/query?key=171e165a7d991c5f6ecd5194c54778ef',//城市疫情&from=10191&to=10349
+    travel:'/api/springTravel/citys?key=be28631878c9774a02cf355acaee76da',
+    travelQuery:'/api/springTravel/query?key=be28631878c9774a02cf355acaee76da',//城市疫情&from=10191&to=10349
+    chooseCity:'/foo/aj/getcitycode',
 }
 
 export default base;
